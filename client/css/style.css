@@ -1,0 +1,167 @@
+html,body{ margin:0; padding:0; height:100%; width:100%; overflow: hidden; }
+#gamefield{
+    background: whitesmoke;
+    height: 100%;
+}
+.hand{
+    height: 20%;
+    width: 100%;
+    background: gray;
+    position: absolute;
+}
+#dragg-allowed-area{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    bottom: 0px;
+}
+#enemy{
+    top: 45px;
+}
+#battleground{
+    background: white;
+    width: 100%;
+    height: 70%;
+}
+#your{
+    height: 30%;
+    bottom: 0px;
+}
+/*card part*/
+.card{
+    touch-action: initial !important;
+    box-shadow: 0 0px 10px black;
+    width: 120px;
+    height: 200px;
+    background: lightgray;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid lightgray;
+}
+.card.picked{
+    box-shadow: 0 5px 25px black;
+    z-index: 50;
+}
+.card.disabled{
+    box-shadow: 0 0px 5px black;
+}
+.card.inactive{
+    box-shadow: none;
+}
+.card .image {
+    background: white;
+    width: 100%;
+    height: 40%;
+}
+.card .description {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: 60%;
+    text-align: center;    
+}
+.card .attribure{
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+.card .hp {
+    background-color: #e83a4b;
+    right: 0;
+}
+.card .dmg{
+    background-color: #B09630;
+}
+.card .manacost{
+    background-color: #006EFF;
+    top: 0;
+}
+.card.talent-taunt{
+    border: 5px solid #2E2E2E;
+}
+.card.talent-shield{
+    border: 2px solid #FFCC00;
+    box-shadow: 0 0 25px #FFCC00;
+    animation: talent-shield-animation 1s linear 1s infinite alternate;
+}
+.card.talent-shield-broken{
+    border: 2px solid #FFCC00;
+}
+@keyframes talent-shield-animation {
+    0%   {box-shadow: 0 0 25px #FFCC00;}
+    100% {box-shadow: 0 0 25px #FF8800;}
+}
+.card.talent-charge{
+  border-color: lightskyblue;
+  box-shadow: 0 0 30px lightskyblue;
+}
+.card.talent-hero{
+  border-color: green;
+  box-shadow: 0 0 30px green;
+  animation: talent-hero-animation 2s linear 2s infinite alternate;
+}
+@keyframes talent-hero-animation {
+    0%   {box-shadow: 0 0 10px green;}
+    100% {box-shadow: 0 0 60px green;}
+}
+.card.active{
+    outline: 3px dashed crimson;
+}
+/* cart part end*/
+#end-turn{
+    position: relative;
+    top: 45%;
+    float: right;
+    margin-right: 50px;
+    box-shadow: 0 3px 7px black;
+}
+#select-target{
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    color: red;
+}
+.manapoint{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background: #006EFF;
+    box-shadow: 0 0 10px #006EFF;
+}
+.manapoint.disabled{
+    background: #003375;
+    box-shadow: none;
+}
+#manapool{
+    display: inline-block;
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+}
+#waiting-msg {
+  display: inline-block;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -150px;
+  z-index: 50;
+}
+#end-msg{
+    background: black;
+    height: 100%;
+    width: 100%;
+    z-index: 5000;
+    position: fixed;
+    opacity: 0.75;
+    color: white;
+    font-size: xx-large;
+    padding-top: 400px;
+    padding-left:  45%;
+    display: none;
+}
